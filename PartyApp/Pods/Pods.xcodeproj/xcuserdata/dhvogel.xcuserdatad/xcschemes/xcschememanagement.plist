@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSSAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,6 +57,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>366F0C4D6EBA7129886F116D2044F6E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5D69761C2CD2A1E5C013537B29CAB4CF</key>
 		<dict>
 			<key>primary</key>
@@ -62,12 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8978C7FB7007A28B676AB1EA004C3923</key>
+		<key>72D57DED5129BDCAEB112D61B15B08A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EA9F7A32D74DE26A94F3FB69256AACB</key>
+		<key>8978C7FB7007A28B676AB1EA004C3923</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCDEA26F23B9862B908991FDCF4A716E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6466159858AB501B88060C0C26D614C</key>
+		<key>B5A83FBE2299A54ABF720DCB4568083B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
