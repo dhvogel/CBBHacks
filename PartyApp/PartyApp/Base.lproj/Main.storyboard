@@ -36,9 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="3aL-qQ-flQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

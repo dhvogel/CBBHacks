@@ -39,7 +39,7 @@ class JoinPartyViewController: UIViewController {
         self.view.addSubview(keywordTF)
         
         // Create the confirm button
-        confirmButton.frame = CGRectMake(0,height,width,0.2*height)
+        confirmButton.frame = CGRectMake(-width,64,width,0.2*height)
         confirmButton.backgroundColor = UIColor.whiteColor()
         confirmButton.setTitle("Confirm", forState: UIControlState.Normal)
         confirmButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -55,12 +55,12 @@ class JoinPartyViewController: UIViewController {
     func handleKeywordChange(sender:UITextField) {
         if sender.text == "" {
             UIView.animateWithDuration(0.5, animations:{
-                self.confirmButton.frame = CGRectMake(0, self.height, self.width, 0.2*self.height)
+                self.confirmButton.frame = CGRectMake(-self.width,64,self.width,0.2*self.height)
             })
         }
         else {
             UIView.animateWithDuration(0.5, animations:{
-                self.confirmButton.frame = CGRectMake(0, 0.8*self.height, self.width, 0.2*self.height) })
+                self.confirmButton.frame = CGRectMake(0,64,self.width,0.2*self.height) })
         }
     }
     
