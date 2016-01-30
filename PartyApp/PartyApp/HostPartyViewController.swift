@@ -29,7 +29,7 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
     var fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 625, 10, 44.0))
     var fundingGoalSwitch=UISwitch(frame:CGRectMake(250, 677.5, 0, 0))
     var fundingGoalLabel = UILabel(frame: CGRectMake(5, 670, 10, 44.0))
-    var descriptionTextView = UITextView(frame:CGRectMake(5, 550, 10, 300))
+    var descriptionTextView = KMPlaceholderTextView(frame:CGRectMake(5, 550, 10, 300))
     var keywordTextField = KaedeTextField(frame: CGRectMake(5, 204-75, 10, 44.0))
     var createButton = UIButton(frame: CGRectMake(5, 1140, 10, 44.0))
     
@@ -50,9 +50,9 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         let width = UIScreen.mainScreen().bounds.width
         view.backgroundColor = .whiteColor()
         self.view = self.scrollView
-        self.scrollView.contentSize = CGSize(width:width, height: 1290)
+        self.scrollView.contentSize = CGSize(width:width, height: 1300)
         scrollView.backgroundColor = .blackColor()
-        view.backgroundColor = .blackColor()
+        view.backgroundColor = .whiteColor()
         
         
         
@@ -155,7 +155,8 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         guestLimitSlider.minimumValue = 0
         guestLimitSlider.maximumValue = 200
         guestLimitSlider.continuous = true
-        guestLimitSlider.tintColor = UIColor.redColor()
+        guestLimitSlider.tintColor = UIColor.blackColor()
+        guestLimitSlider.backgroundColor = .whiteColor()
         guestLimitSlider.value = 100
         guestLimitSlider.addTarget(self, action: "sliderValueDidChange:", forControlEvents: .ValueChanged)
         self.view.addSubview(guestLimitSlider)
@@ -164,7 +165,7 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         guestLimitValueLabel = UILabel(frame: CGRectMake(5, 625+300+44+100+1, width-10, 44.0))
         guestLimitValueLabel.backgroundColor = .blackColor()
         guestLimitValueLabel.textColor = .whiteColor()
-        guestLimitValueLabel.text = String(Int(guestLimitSlider.value))
+        guestLimitValueLabel.text = "\(String(Int(guestLimitSlider.value))) People"
         guestLimitValueLabel.textAlignment = NSTextAlignment.Center
         self.view.addSubview(guestLimitValueLabel)
         
@@ -187,7 +188,8 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         fundingGoalSlider.minimumValue = 0
         fundingGoalSlider.maximumValue = 500
         fundingGoalSlider.continuous = true
-        fundingGoalSlider.tintColor = UIColor.redColor()
+        fundingGoalSlider.tintColor = UIColor.blackColor()
+        fundingGoalSlider.backgroundColor = .whiteColor()
         fundingGoalSlider.value = 250
         fundingGoalSlider.addTarget(self, action: "sliderValueDidChange2:", forControlEvents: .ValueChanged)
         self.view.addSubview(fundingGoalSlider)
@@ -196,18 +198,18 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 745+300+44+100+1, width-10, 44.0))
         fundingGoalValueLabel.backgroundColor = .blackColor()
         fundingGoalValueLabel.textColor = .whiteColor()
-        fundingGoalValueLabel.text = String(Int(fundingGoalSlider.value))
+        fundingGoalValueLabel.text = "$\(String(Int(fundingGoalSlider.value)))"
         fundingGoalValueLabel.textAlignment = NSTextAlignment.Center
         self.view.addSubview(fundingGoalValueLabel)
         
         //Create the description text view
-        descriptionTextView = UITextView(frame:CGRectMake(5, 550+44+100, width-10, 300))
-        descriptionTextView.backgroundColor = .blackColor()
-        descriptionTextView.layer.borderColor = UIColor.redColor().CGColor
+        descriptionTextView = KMPlaceholderTextView(frame:CGRectMake(5, 550+44+100, width-10, 300))
+        descriptionTextView.backgroundColor = .whiteColor()
+        descriptionTextView.layer.borderColor = UIColor.blackColor().CGColor
         descriptionTextView.layer.borderWidth = 2
-        descriptionTextView.text = "Type your description here."
-        descriptionTextView.textColor = .whiteColor()
-        descriptionTextView.font = UIFont(name: descriptionTextView.font!.fontName, size: 18)
+        descriptionTextView.placeholder = "Type your description here."
+        descriptionTextView.textColor = .blackColor()
+        descriptionTextView.font = UIFont.systemFontOfSize(18)
         self.view.addSubview(descriptionTextView)
         
         //Create the keyword TextField
@@ -219,7 +221,7 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.view.addSubview(keywordTextField)
         
         //Create the create button
-        createButton = UIButton(frame: CGRectMake(5, 1140+100+1, width-10, 44.0))
+        createButton = UIButton(frame: CGRectMake(5, 1140+100, width-10, 59))
         createButton.setTitle("Create", forState: UIControlState.Normal)
         createButton.backgroundColor = .whiteColor()
         createButton.setTitleColor(.blackColor(), forState: UIControlState.Normal)
@@ -244,13 +246,13 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
     //Function for getting the value of the guest limit slider
     func sliderValueDidChange(sender:UISlider!)
     {
-        guestLimitValueLabel.text = String(Int(guestLimitSlider.value))
+        guestLimitValueLabel.text = "\(String(Int(guestLimitSlider.value))) People"
     }
     
     //Function for getting the value of the funding goal slider
     func sliderValueDidChange2(sender:UISlider!)
     {
-        fundingGoalValueLabel.text = String(Int(fundingGoalSlider.value))
+        fundingGoalValueLabel.text = "$\(String(Int(fundingGoalSlider.value)))"
     }
     
     
