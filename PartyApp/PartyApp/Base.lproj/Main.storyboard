@@ -21,12 +21,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3av-LD-2Yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="1223"/>
+            <point key="canvasLocation" x="1137" y="1255"/>
         </scene>
         <!--Host a Party-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hostPartyViewController" id="BYZ-38-t0r" customClass="HostPartyViewController" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="385"/>
+            <point key="canvasLocation" x="1849" y="468"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="439-LE-SRH">
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cP-Um-Jsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2623" y="390"/>
+            <point key="canvasLocation" x="2567" y="468"/>
         </scene>
         <!--Init View Controller-->
         <scene sceneID="tZI-uE-8K4">

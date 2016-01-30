@@ -43,15 +43,22 @@ class InitViewController: UIViewController {
     }
     
     func joinButtonAction(sender:UIButton) {
-        let mapViewControllerObejct = self.storyboard?.instantiateViewControllerWithIdentifier("joinPartyViewController") as? JoinPartyViewController
-        self.navigationController?.pushViewController(mapViewControllerObejct!, animated: true)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("joinPartyViewController") as? JoinPartyViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
         
     }
     
     func hostButtonAction(sender:UIButton) {
-        let vc:UIViewController = storyboard!.instantiateViewControllerWithIdentifier("hostPartyViewController") as! SecondViewController
-        presentViewController(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("hostPartyViewController") as? HostPartyViewController
+        //presentViewController(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc!, animated: true)
+        //
+        //
+        // Crashes here due to navigationController being nil (I think)
+        //
+        //
+        //
+        //
     }
 
     override func didReceiveMemoryWarning() {
