@@ -37,7 +37,6 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
 
 
-
     
     
     override func viewDidLoad() {
@@ -50,8 +49,9 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let width = UIScreen.mainScreen().bounds.width
         view.backgroundColor = .whiteColor()
         self.view = self.scrollView
-        self.scrollView.contentSize = CGSize(width:width, height: 1200)
-        scrollView.backgroundColor = .whiteColor()
+        self.scrollView.contentSize = CGSize(width:width, height: 1290)
+        scrollView.backgroundColor = .blackColor()
+        view.backgroundColor = .blackColor()
 
 
         
@@ -108,8 +108,6 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         timeLabel.text = " Choose the Date:"
         self.view.addSubview(timeLabel)
        
-  
-        
         //Create the label for the image selector
         let imageLabel = UILabel(frame: CGRectMake(5, 334-75+44, width-10, 44.0))
         imageLabel.backgroundColor = .blackColor()
@@ -119,7 +117,7 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         
         //Create the image selector
         let image : UIImage = UIImage(named:"defaultPhoto")!
-        imageSelector = UIImageView(frame: CGRectMake(5, 378-75+44, width-10, 250))
+        imageSelector = UIImageView(frame: CGRectMake(5, 378-75+44-3, width-10, 350))
         imageSelector.image = image
         imageSelector.userInteractionEnabled = true
         self.view.addSubview(imageSelector)
@@ -138,21 +136,21 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         view.addGestureRecognizer(tapRecKeyBoardHider)
         
         //Create the label for guest limit
-        let guestLimitLabel = UILabel(frame: CGRectMake(5, 550+300+44, width-10, 44.0))
+        let guestLimitLabel = UILabel(frame: CGRectMake(5, 550+300+44+100+1, width-10, 44.0))
         guestLimitLabel.backgroundColor = .blackColor()
         guestLimitLabel.textColor = .whiteColor()
         guestLimitLabel.text = " Guest Limit"
         self.view.addSubview(guestLimitLabel)
         
         //Create the switch for the guest limit
-        let guestLimitSwitch=UISwitch(frame:CGRectMake(250, 557.5+300+44, 0, 0))
+        let guestLimitSwitch=UISwitch(frame:CGRectMake(250, 557.5+300+44+100+1, 0, 0))
         guestLimitSwitch.on = true
         guestLimitSwitch.setOn(true, animated: false);
         guestLimitSwitch.addTarget(self, action: "switchValueDidChange:", forControlEvents: .ValueChanged);
         self.view.addSubview(guestLimitSwitch)
         
         //Create the slider for the guest limit
-        guestLimitSlider = UISlider(frame:CGRectMake(20, 600+300+44, 280, 20))
+        guestLimitSlider = UISlider(frame:CGRectMake(20, 600+300+44+100+1, 280, 20))
         guestLimitSlider.minimumValue = 0
         guestLimitSlider.maximumValue = 200
         guestLimitSlider.continuous = true
@@ -162,7 +160,7 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.view.addSubview(guestLimitSlider)
         
         //Create the label for guest limit value
-        guestLimitValueLabel = UILabel(frame: CGRectMake(5, 625+300+44, width-10, 44.0))
+        guestLimitValueLabel = UILabel(frame: CGRectMake(5, 625+300+44+100+1, width-10, 44.0))
         guestLimitValueLabel.backgroundColor = .blackColor()
         guestLimitValueLabel.textColor = .whiteColor()
         guestLimitValueLabel.text = String(Int(guestLimitSlider.value))
@@ -170,21 +168,21 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.view.addSubview(guestLimitValueLabel)
         
         //Create the label for funding goal
-        fundingGoalLabel = UILabel(frame: CGRectMake(5, 670+300+44, width-10, 44.0))
+        fundingGoalLabel = UILabel(frame: CGRectMake(5, 670+300+44+100+1, width-10, 44.0))
         fundingGoalLabel.backgroundColor = .blackColor()
         fundingGoalLabel.textColor = .whiteColor()
         fundingGoalLabel.text = " Funding Goal"
         self.view.addSubview(fundingGoalLabel)
         
         //Create the switch for the funding goal
-        fundingGoalSwitch=UISwitch(frame:CGRectMake(250, 677.5+300+44, 0, 0))
+        fundingGoalSwitch=UISwitch(frame:CGRectMake(250, 677.5+300+44+100+1, 0, 0))
         fundingGoalSwitch.on = true
         fundingGoalSwitch.setOn(true, animated: false);
         fundingGoalSwitch.addTarget(self, action: "switchValueDidChange2:", forControlEvents: .ValueChanged);
         self.view.addSubview(fundingGoalSwitch)
         
         //Create the slider for the funding goal
-        fundingGoalSlider = UISlider(frame:CGRectMake(20, 720+300+44, 280, 20))
+        fundingGoalSlider = UISlider(frame:CGRectMake(20, 720+300+44+100+1, 280, 20))
         fundingGoalSlider.minimumValue = 0
         fundingGoalSlider.maximumValue = 500
         fundingGoalSlider.continuous = true
@@ -194,7 +192,7 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.view.addSubview(fundingGoalSlider)
         
         //Create the label for guest limit value
-        fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 745+300+44, width-10, 44.0))
+        fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 745+300+44+100+1, width-10, 44.0))
         fundingGoalValueLabel.backgroundColor = .blackColor()
         fundingGoalValueLabel.textColor = .whiteColor()
         fundingGoalValueLabel.text = String(Int(fundingGoalSlider.value))
@@ -202,12 +200,13 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.view.addSubview(fundingGoalValueLabel)
         
         //Create the description text view
-        descriptionTextView = UITextView(frame:CGRectMake(5, 550+44, width-10, 300))
+        descriptionTextView = UITextView(frame:CGRectMake(5, 550+44+100, width-10, 300))
         descriptionTextView.backgroundColor = .blackColor()
         descriptionTextView.layer.borderColor = UIColor.redColor().CGColor
         descriptionTextView.layer.borderWidth = 2
         descriptionTextView.text = "Type your description here."
         descriptionTextView.textColor = .whiteColor()
+        descriptionTextView.font = UIFont(name: descriptionTextView.font!.fontName, size: 18)
         self.view.addSubview(descriptionTextView)
         
         //Create the keyword TextField
@@ -218,8 +217,8 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         keywordTextField.backgroundColor = .blackColor()
         self.view.addSubview(keywordTextField)
         
-        //Create the submit button
-        createButton = UIButton(frame: CGRectMake(5, 1140, width-10, 44.0))
+        //Create the create button
+        createButton = UIButton(frame: CGRectMake(5, 1140+100+1, width-10, 44.0))
         createButton.setTitle("Create", forState: UIControlState.Normal)
         createButton.backgroundColor = .whiteColor()
         createButton.setTitleColor(.blackColor(), forState: UIControlState.Normal)
@@ -274,10 +273,10 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
             guestLimitValueLabel.hidden = false
             
             UIView.animateWithDuration(0.01, animations:{
-                self.fundingGoalLabel.frame = CGRectMake(5, 670+300+44, width-10, 44.0)
-                self.fundingGoalSwitch.frame = CGRectMake(250, 677.5+300+44, 0, 0)
-                self.fundingGoalSlider.frame = CGRectMake(20, 720+300+44, 280, 20)
-                self.fundingGoalValueLabel.frame = CGRectMake(5, 745+300+44, width-10, 44.0)
+                self.fundingGoalLabel.frame = CGRectMake(5, 670+300+44+100+1, width-10, 44.0)
+                self.fundingGoalSwitch.frame = CGRectMake(250, 677.5+300+44+100+1, 0, 0)
+                self.fundingGoalSlider.frame = CGRectMake(20, 720+300+44+100+1, 280, 20)
+                self.fundingGoalValueLabel.frame = CGRectMake(5, 745+300+44+100+1, width-10, 44.0)
 
                 
 
@@ -291,10 +290,10 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
             
             
             UIView.animateWithDuration(0.5, animations:{
-                self.fundingGoalLabel.frame = CGRectMake(5, 600+300+44, width-10, 44.0)
-                self.fundingGoalSwitch.frame = CGRectMake(250, 607.5+300+44, 0, 0)
-                self.fundingGoalSlider.frame = CGRectMake(20, 650+300+44, 280, 20)
-                self.fundingGoalValueLabel.frame = CGRectMake(5, 675+300+44, width-10, 44.0)
+                self.fundingGoalLabel.frame = CGRectMake(5, 600+300+44+100+1, width-10, 44.0)
+                self.fundingGoalSwitch.frame = CGRectMake(250, 607.5+300+44+100+1, 0, 0)
+                self.fundingGoalSlider.frame = CGRectMake(20, 650+300+44+100+1, 280, 20)
+                self.fundingGoalValueLabel.frame = CGRectMake(5, 675+300+44+100+1, width-10, 44.0)
                 
 
             })
