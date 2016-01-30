@@ -9,6 +9,7 @@ PODS:
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.9.1):
     - FBSDKCoreKit
+  - KMPlaceholderTextView (1.1.1)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
   - ParseCrashReporting (1.9.2):
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
+  - KMPlaceholderTextView (~> 1.1.1)
   - Parse
   - ParseCrashReporting
   - ParseFacebookUtilsV4
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
   FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
+  KMPlaceholderTextView: 686edec818f5727728eaf8c2e9e70177692d3d53
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
   ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
   ParseFacebookUtilsV4: 216e03bd560404eed09a4875c75f0c1cdf758070

@@ -19,13 +19,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="OSS-Bs-b1l">
-                            <connections>
-                                <action selector="itemPressed:" destination="BYZ-38-t0r" id="xvx-yF-1UJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                 </viewController>

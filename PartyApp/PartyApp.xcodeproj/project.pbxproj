@@ -15,6 +15,7 @@
 		1A3C45161C5C6BB600DB2F98 /* PartyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45151C5C6BB600DB2F98 /* PartyAppTests.swift */; };
 		1A3C45211C5C6BB600DB2F98 /* PartyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */; };
 		3784091F3A2B34FAD89010DB /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB01E9B286106DC836C7753 /* Pods_PartyApp.framework */; };
+		DCAFCABD1C5D39AD00712FC8 /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFCABC1C5D39AD00712FC8 /* KMPlaceholderTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1A3C45221C5C6BB600DB2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EB01E9B286106DC836C7753 /* Pods_PartyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		557F2370427C4B1C47303E04 /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
+		DCAFCABC1C5D39AD00712FC8 /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */,
+				DCAFCABC1C5D39AD00712FC8 /* KMPlaceholderTextView.swift */,
 				1A3C45021C5C6BB500DB2F98 /* HostAPartyViewController.swift */,
 				1A3C45041C5C6BB500DB2F98 /* Main.storyboard */,
 				1A3C45071C5C6BB500DB2F98 /* Assets.xcassets */,
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3C45031C5C6BB500DB2F98 /* HostAPartyViewController.swift in Sources */,
+				DCAFCABD1C5D39AD00712FC8 /* KMPlaceholderTextView.swift in Sources */,
 				1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

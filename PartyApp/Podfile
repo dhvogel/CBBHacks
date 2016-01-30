@@ -8,6 +8,7 @@ pod 'ParseUI'
 pod 'ParseCrashReporting'
 pod 'ParseFacebookUtilsV4'
 pod 'TextFieldEffects'
+pod 'KMPlaceholderTextView', '~> 1.1.1' 
 end
 
 post_install do |installer|

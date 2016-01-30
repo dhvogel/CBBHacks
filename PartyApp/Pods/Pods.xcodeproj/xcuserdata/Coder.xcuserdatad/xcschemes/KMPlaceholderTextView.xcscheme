@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0E16197F7EF1167D2F8B5473'
-               BlueprintName = 'FBSDKCoreKit'
+               BlueprintIdentifier = 'E05408C3AC9FE6EBDCE03B04'
+               BlueprintName = 'KMPlaceholderTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FBSDKCoreKit.framework'>
+               BuildableName = 'KMPlaceholderTextView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
