@@ -22,6 +22,15 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
     let tapRecImage = UITapGestureRecognizer()
     let tapRecKeyBoardHider = UITapGestureRecognizer()
     let scrollView = UIScrollView(frame: UIScreen.mainScreen().bounds)
+    var guestLimitSlider = UISlider(frame:CGRectMake(20, 700, 280, 20))
+    var guestLimitValueLabel = UILabel(frame: CGRectMake(5, 625, 10, 44.0))
+    var fundingGoalSlider = UISlider(frame:CGRectMake(20, 700, 280, 20))
+    var fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 625, 10, 44.0))
+    var fundingGoalSwitch=UISwitch(frame:CGRectMake(250, 677.5, 0, 0))
+    var fundingGoalLabel = UILabel(frame: CGRectMake(5, 670, 10, 44.0))
+
+    
+
 
 
     
@@ -36,7 +45,7 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let width = UIScreen.mainScreen().bounds.width
         view.backgroundColor = .whiteColor()
         self.view = self.scrollView
-        self.scrollView.contentSize = CGSize(width:width, height: 1000)
+        self.scrollView.contentSize = CGSize(width:width, height: 1200)
         scrollView.backgroundColor = .whiteColor()
 
 
@@ -123,17 +132,71 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
         tapRecKeyBoardHider.addTarget(self, action: "dismissKeyboard")
         view.addGestureRecognizer(tapRecKeyBoardHider)
         
-
-        /*
+        //Create the label for guest limit
+        let guestLimitLabel = UILabel(frame: CGRectMake(5, 550+300, width-10, 44.0))
+        guestLimitLabel.backgroundColor = .blackColor()
+        guestLimitLabel.textColor = .whiteColor()
+        guestLimitLabel.text = " Guest Limit"
+        self.view.addSubview(guestLimitLabel)
+        
         //Create the switch for the guest limit
-        var switchDemo=UISwitch(frame:CGRectMake(150, 645, 0, 0))
-        switchDemo.on = true
-        switchDemo.setOn(true, animated: false);
-        switchDemo.addTarget(self, action: "switchValueDidChange:", forControlEvents: .ValueChanged);
-        self.view.addSubview(switchDemo);
-        */
-        //Create the scroll view
-
+        let guestLimitSwitch=UISwitch(frame:CGRectMake(250, 557.5+300, 0, 0))
+        guestLimitSwitch.on = true
+        guestLimitSwitch.setOn(true, animated: false);
+        guestLimitSwitch.addTarget(self, action: "switchValueDidChange:", forControlEvents: .ValueChanged);
+        self.view.addSubview(guestLimitSwitch)
+        
+        //Create the slider for the guest limit
+        guestLimitSlider = UISlider(frame:CGRectMake(20, 600+300, 280, 20))
+        guestLimitSlider.minimumValue = 0
+        guestLimitSlider.maximumValue = 200
+        guestLimitSlider.continuous = true
+        guestLimitSlider.tintColor = UIColor.redColor()
+        guestLimitSlider.value = 100
+        guestLimitSlider.addTarget(self, action: "sliderValueDidChange:", forControlEvents: .ValueChanged)
+        self.view.addSubview(guestLimitSlider)
+        
+        //Create the label for guest limit value
+        guestLimitValueLabel = UILabel(frame: CGRectMake(5, 625+300, width-10, 44.0))
+        guestLimitValueLabel.backgroundColor = .blackColor()
+        guestLimitValueLabel.textColor = .whiteColor()
+        guestLimitValueLabel.text = String(Int(guestLimitSlider.value))
+        guestLimitValueLabel.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(guestLimitValueLabel)
+        
+        //Create the label for funding goal
+        fundingGoalLabel = UILabel(frame: CGRectMake(5, 670+300, width-10, 44.0))
+        fundingGoalLabel.backgroundColor = .blackColor()
+        fundingGoalLabel.textColor = .whiteColor()
+        fundingGoalLabel.text = " Funding Goal"
+        self.view.addSubview(fundingGoalLabel)
+        
+        //Create the switch for the funding goal
+        fundingGoalSwitch=UISwitch(frame:CGRectMake(250, 677.5+300, 0, 0))
+        fundingGoalSwitch.on = true
+        fundingGoalSwitch.setOn(true, animated: false);
+        fundingGoalSwitch.addTarget(self, action: "switchValueDidChange2:", forControlEvents: .ValueChanged);
+        self.view.addSubview(fundingGoalSwitch)
+        
+        //Create the slider for the funding goal
+        fundingGoalSlider = UISlider(frame:CGRectMake(20, 720+300, 280, 20))
+        fundingGoalSlider.minimumValue = 0
+        fundingGoalSlider.maximumValue = 500
+        fundingGoalSlider.continuous = true
+        fundingGoalSlider.tintColor = UIColor.redColor()
+        fundingGoalSlider.value = 250
+        fundingGoalSlider.addTarget(self, action: "sliderValueDidChange2:", forControlEvents: .ValueChanged)
+        self.view.addSubview(fundingGoalSlider)
+        
+        //Create the label for guest limit value
+        fundingGoalValueLabel = UILabel(frame: CGRectMake(5, 745+300, width-10, 44.0))
+        fundingGoalValueLabel.backgroundColor = .blackColor()
+        fundingGoalValueLabel.textColor = .whiteColor()
+        fundingGoalValueLabel.text = String(Int(fundingGoalSlider.value))
+        fundingGoalValueLabel.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(fundingGoalValueLabel)
+        
+       
 
     }
 
@@ -146,10 +209,81 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
 
     }
     
+    //Function for getting the value of the guest limit slider
+    func sliderValueDidChange(sender:UISlider!)
+    {
+        guestLimitValueLabel.text = String(Int(guestLimitSlider.value))
+    }
+    
+    //Function for getting the value of the funding goal slider
+    func sliderValueDidChange2(sender:UISlider!)
+    {
+        fundingGoalValueLabel.text = String(Int(fundingGoalSlider.value))
+    }
+    
+    
     //Whenever you tap somewhere outside the TextField
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    //A function for when the gust limit switch is swicthed
+    func switchValueDidChange(sender:UISwitch!)
+    {
+        
+        
+        if (sender.on == true){
+            let height = UIScreen.mainScreen().bounds.height
+            let width = UIScreen.mainScreen().bounds.width
+            
+            
+            guestLimitSlider.hidden = false
+            guestLimitValueLabel.hidden = false
+            
+            UIView.animateWithDuration(0.01, animations:{
+                self.fundingGoalLabel.frame = CGRectMake(5, 670+300, width-10, 44.0)
+                self.fundingGoalSwitch.frame = CGRectMake(250, 677.5+300, 0, 0)
+                self.fundingGoalSlider.frame = CGRectMake(20, 720+300, 280, 20)
+                self.fundingGoalValueLabel.frame = CGRectMake(5, 745+300, width-10, 44.0)
+                
+
+            })
+          
+            
+        }
+        else{
+            let height = UIScreen.mainScreen().bounds.height
+            let width = UIScreen.mainScreen().bounds.width
+            
+            
+            UIView.animateWithDuration(0.5, animations:{
+                self.fundingGoalLabel.frame = CGRectMake(5, 600+300, width-10, 44.0)
+                self.fundingGoalSwitch.frame = CGRectMake(250, 607.5+300, 0, 0)
+                self.fundingGoalSlider.frame = CGRectMake(20, 650+300, 280, 20)
+                self.fundingGoalValueLabel.frame = CGRectMake(5, 675+300, width-10, 44.0)
+                
+
+            })
+            
+            guestLimitSlider.hidden = true
+            guestLimitValueLabel.hidden = true
+         
+        }
+    }
+    
+    //A function for when the funding goal switch is on
+    func switchValueDidChange2(sender:UISwitch!)
+    {
+        if (sender.on == true){
+            fundingGoalSlider.hidden = false
+            fundingGoalValueLabel.hidden = false
+            
+        }
+        else{
+            fundingGoalSlider.hidden = true
+            fundingGoalValueLabel.hidden = true
+        }
     }
     
     //A function to select an image for the party
