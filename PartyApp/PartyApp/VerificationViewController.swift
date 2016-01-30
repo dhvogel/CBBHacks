@@ -24,12 +24,23 @@ class VerificationViewController: UIViewController {
         let bwidth = (width-2)/5
         let bheight = (height-64)/5
         
+        var partyHashed = partyDetails.valueForKey("ObjectID") as! String!
+        while partyHashed.characters.count < 25 {
+            partyHashed = partyHashed + String(arc4random_uniform(9999))
+        }
+        
         for i in 0..<25 {
             let b:UIButton = UIButton(frame: CGRectMake(CGFloat(i%5)*bwidth+10, CGFloat(i/5)*bwidth + 64+10, bwidth-20, bwidth-20))
             b.backgroundColor = UIColor.blackColor()
-            if i % 2 == 0 {
-                b.backgroundColor = UIColor.redColor()
+            //
+            let index = partyHashed.startIndex.advancedBy(i)
+            let someChar = partyHashed[index]
+            if let someInt = Int(String(someChar)) {
+                if someInt % 2 == 0 {
+                    b.backgroundColor = UIColor.grayColor()
+                }
             }
+            //
             self.view.addSubview(b)
         }
         

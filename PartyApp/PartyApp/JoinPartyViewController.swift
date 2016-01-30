@@ -97,7 +97,7 @@ class JoinPartyViewController: UIViewController {
             else {
                 SwiftSpinner.hide()
                 let mapViewControllerObejct = self.storyboard?.instantiateViewControllerWithIdentifier("FindPartyProfVC") as? PartyProfileViewController
-                mapViewControllerObejct?.PartyDetails = object![0]
+                mapViewControllerObejct?.partyDetails = object![0]
                 self.navigationController?.pushViewController(mapViewControllerObejct!, animated: true)
             }
         }

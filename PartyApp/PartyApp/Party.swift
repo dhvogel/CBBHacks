@@ -22,6 +22,7 @@ class Party {
     var guestCurrent: Int
     var fundingGoal: Int
     var fundingCurrent: Int
+    let timeAtCreation: Int
     
     init(hostName:String, partyName:String, theme:String, location:String, description:String, date:String, image:UIImage, guestLimit:Int, fundingGoal:Int){
         
@@ -36,6 +37,7 @@ class Party {
         self.guestCurrent = 0
         self.fundingGoal = fundingGoal
         self.fundingCurrent = 0
+        self.timeAtCreation = Int(NSDate().timeIntervalSince1970)
         
     }
     
