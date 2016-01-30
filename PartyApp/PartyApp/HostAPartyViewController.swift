@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  PartyApp
@@ -351,4 +352,3 @@ class HostAPartyViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     
 }
-

@@ -8,6 +8,7 @@ pod 'ParseUI'
 pod 'ParseCrashReporting'
 pod 'ParseFacebookUtilsV4'
 pod 'TextFieldEffects'
+pod 'VENAppSwitchSDK'
 end
 
 post_install do |installer|
