@@ -15,6 +15,7 @@
 		1A3C45161C5C6BB600DB2F98 /* PartyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45151C5C6BB600DB2F98 /* PartyAppTests.swift */; };
 		1A3C45211C5C6BB600DB2F98 /* PartyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */; };
 		3784091F3A2B34FAD89010DB /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB01E9B286106DC836C7753 /* Pods_PartyApp.framework */; };
+		DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1A3C45221C5C6BB600DB2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EB01E9B286106DC836C7753 /* Pods_PartyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		557F2370427C4B1C47303E04 /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
+		DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				1A3C45071C5C6BB500DB2F98 /* Assets.xcassets */,
 				1A3C45091C5C6BB500DB2F98 /* LaunchScreen.storyboard */,
 				1A3C450C1C5C6BB500DB2F98 /* Info.plist */,
+				DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */,
 			);
 			path = PartyApp;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */,
 				1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */,
 				1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */,
 			);
