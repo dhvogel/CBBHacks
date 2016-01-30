@@ -17,38 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="3aL-qQ-flQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Host a Party" id="r1I-eg-upN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1133" y="385"/>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="439-LE-SRH">
-            <objects>
-                <viewController storyboardIdentifier="SecondVC" id="jSW-QA-H76" customClass="SecondViewController" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gc5-Vh-IOV"/>
-                        <viewControllerLayoutGuide type="bottom" id="uec-1m-4Ah"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wpK-3L-pFM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0N-BF-N7f">
-                                <rect key="frame" x="283" y="285" width="52" height="30"/>
-                                <state key="normal" title="Second"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0cP-Um-Jsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1811" y="390"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i8c-CN-rSk">
