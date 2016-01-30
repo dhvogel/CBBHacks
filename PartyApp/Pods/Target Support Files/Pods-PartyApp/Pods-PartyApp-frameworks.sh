@@ -85,29 +85,23 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PartyApp/Bolts.framework"
-  install_framework "Pods-PartyApp/CMDQueryStringSerialization.framework"
   install_framework "Pods-PartyApp/FBSDKCoreKit.framework"
   install_framework "Pods-PartyApp/FBSDKLoginKit.framework"
   install_framework "Pods-PartyApp/Parse.framework"
   install_framework "Pods-PartyApp/ParseCrashReporting.framework"
   install_framework "Pods-PartyApp/ParseFacebookUtilsV4.framework"
   install_framework "Pods-PartyApp/ParseUI.framework"
-  install_framework "Pods-PartyApp/SSKeychain.framework"
+  install_framework "Pods-PartyApp/Stripe.framework"
   install_framework "Pods-PartyApp/TextFieldEffects.framework"
-  install_framework "Pods-PartyApp/VENCore.framework"
-  install_framework "Pods-PartyApp/Venmo_iOS_SDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PartyApp/Bolts.framework"
-  install_framework "Pods-PartyApp/CMDQueryStringSerialization.framework"
   install_framework "Pods-PartyApp/FBSDKCoreKit.framework"
   install_framework "Pods-PartyApp/FBSDKLoginKit.framework"
   install_framework "Pods-PartyApp/Parse.framework"
   install_framework "Pods-PartyApp/ParseCrashReporting.framework"
   install_framework "Pods-PartyApp/ParseFacebookUtilsV4.framework"
   install_framework "Pods-PartyApp/ParseUI.framework"
-  install_framework "Pods-PartyApp/SSKeychain.framework"
+  install_framework "Pods-PartyApp/Stripe.framework"
   install_framework "Pods-PartyApp/TextFieldEffects.framework"
-  install_framework "Pods-PartyApp/VENCore.framework"
-  install_framework "Pods-PartyApp/Venmo_iOS_SDK.framework"
 fi

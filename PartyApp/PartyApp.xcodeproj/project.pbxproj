@@ -11,7 +11,6 @@
 		1A24C3731C5C85AE00890C15 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24C3721C5C85AE00890C15 /* InitViewController.swift */; };
 		1A24C3751C5CB0D500890C15 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24C3741C5CB0D500890C15 /* Party.swift */; };
 		1A25A8D51C5C830200F0617F /* JoinPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */; };
-		1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */; };
 		1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45021C5C6BB500DB2F98 /* ViewController.swift */; };
 		1A3C45061C5C6BB500DB2F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3C45041C5C6BB500DB2F98 /* Main.storyboard */; };
 		1A3C45081C5C6BB500DB2F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3C45071C5C6BB500DB2F98 /* Assets.xcassets */; };
@@ -19,7 +18,9 @@
 		1A3C45161C5C6BB600DB2F98 /* PartyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45151C5C6BB600DB2F98 /* PartyAppTests.swift */; };
 		1A3C45211C5C6BB600DB2F98 /* PartyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */; };
 		3F2B6CFA1C5CE0F000AFBCD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2B6CF91C5CE0F000AFBCD3 /* UIKit.framework */; };
-		3F2B6CFE1C5D1B7100AFBCD3 /* VenmoHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B6CFD1C5D1B7100AFBCD3 /* VenmoHandling.swift */; };
+		3F2B6D081C5D459400AFBCD3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B6D031C5D3EA800AFBCD3 /* SwipeViewController.swift */; };
+		3F2B6D0A1C5D476600AFBCD3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2B6D091C5D476600AFBCD3 /* CoreData.framework */; };
+		3F2B6D0B1C5D482300AFBCD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */; };
 		DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */; };
 		F34DD09050826E9E3E265A26 /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AC825B40E3C8BE51C503DA /* Pods_PartyApp.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +61,8 @@
 		1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyAppUITests.swift; sourceTree = "<group>"; };
 		1A3C45221C5C6BB600DB2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2B6CF91C5CE0F000AFBCD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3F2B6CFD1C5D1B7100AFBCD3 /* VenmoHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenmoHandling.swift; sourceTree = "<group>"; };
+		3F2B6D031C5D3EA800AFBCD3 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		3F2B6D091C5D476600AFBCD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5443B16DB09C0CFFFA85BC70 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C4AC825B40E3C8BE51C503DA /* Pods_PartyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10A0FEDCAA24D04BBA02A7B /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2B6D0A1C5D476600AFBCD3 /* CoreData.framework in Frameworks */,
 				3F2B6CFA1C5CE0F000AFBCD3 /* UIKit.framework in Frameworks */,
 				F34DD09050826E9E3E265A26 /* Pods_PartyApp.framework in Frameworks */,
 			);
@@ -125,10 +128,10 @@
 				1A3C45041C5C6BB500DB2F98 /* Main.storyboard */,
 				1A24C3721C5C85AE00890C15 /* InitViewController.swift */,
 				1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */,
-				3F2B6CFD1C5D1B7100AFBCD3 /* VenmoHandling.swift */,
 				1A24C3741C5CB0D500890C15 /* Party.swift */,
 				1A3C45071C5C6BB500DB2F98 /* Assets.xcassets */,
 				1A3C45091C5C6BB500DB2F98 /* LaunchScreen.storyboard */,
+				3F2B6D031C5D3EA800AFBCD3 /* SwipeViewController.swift */,
 				1A3C450C1C5C6BB500DB2F98 /* Info.plist */,
 				DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */,
 			);
@@ -156,6 +159,7 @@
 		7CD61DE4D52D6574D1C80F47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F2B6D091C5D476600AFBCD3 /* CoreData.framework */,
 				3F2B6CF91C5CE0F000AFBCD3 /* UIKit.framework */,
 				C4AC825B40E3C8BE51C503DA /* Pods_PartyApp.framework */,
 			);
@@ -353,13 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */,
-				3F2B6CFE1C5D1B7100AFBCD3 /* VenmoHandling.swift in Sources */,
+				3F2B6D0B1C5D482300AFBCD3 /* AppDelegate.swift in Sources */,
 				1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */,
+				DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */,
 				1A24C3731C5C85AE00890C15 /* InitViewController.swift in Sources */,
-				1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */,
 				1A00602C1C5CC012003B82AD /* HostPartyViewController.swift in Sources */,
 				1A24C3751C5CB0D500890C15 /* Party.swift in Sources */,
+				3F2B6D081C5D459400AFBCD3 /* SwipeViewController.swift in Sources */,
 				1A25A8D51C5C830200F0617F /* JoinPartyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
