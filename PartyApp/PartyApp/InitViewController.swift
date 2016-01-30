@@ -59,10 +59,18 @@ class InitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Shows the navigation bar when another view is shown
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = false
+    }
+    
+    // Hides the navigation bar when this view is shown
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
 
     /*

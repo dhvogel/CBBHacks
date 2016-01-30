@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A24C3731C5C85AE00890C15 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24C3721C5C85AE00890C15 /* InitViewController.swift */; };
+		1A24C3751C5CB0D500890C15 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24C3741C5CB0D500890C15 /* Party.swift */; };
 		1A25A8D51C5C830200F0617F /* JoinPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */; };
 		1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */; };
 		1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45021C5C6BB500DB2F98 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1A24C3721C5C85AE00890C15 /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		1A24C3741C5CB0D500890C15 /* Party.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinPartyViewController.swift; sourceTree = "<group>"; };
 		1A3C44FD1C5C6BB500DB2F98 /* PartyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				1A3C45041C5C6BB500DB2F98 /* Main.storyboard */,
 				1A24C3721C5C85AE00890C15 /* InitViewController.swift */,
 				1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */,
+				1A24C3741C5CB0D500890C15 /* Party.swift */,
 				1A3C45071C5C6BB500DB2F98 /* Assets.xcassets */,
 				1A3C45091C5C6BB500DB2F98 /* LaunchScreen.storyboard */,
 				1A3C450C1C5C6BB500DB2F98 /* Info.plist */,
@@ -344,6 +347,7 @@
 				1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */,
 				1A24C3731C5C85AE00890C15 /* InitViewController.swift in Sources */,
 				1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */,
+				1A24C3751C5CB0D500890C15 /* Party.swift in Sources */,
 				1A25A8D51C5C830200F0617F /* JoinPartyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
