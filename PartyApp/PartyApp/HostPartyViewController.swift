@@ -9,6 +9,8 @@
 
 import UIKit
 import TextFieldEffects
+import Parse
+import SwiftSpinner
 
 class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate {
     
@@ -228,8 +230,84 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
         createButton.layer.borderColor = UIColor.blackColor().CGColor
         createButton.layer.borderWidth = 2
         createButton.userInteractionEnabled = true
+        createButton.addTarget(self, action: "submitParty:", forControlEvents: .TouchUpInside)
         self.view.addSubview(createButton)
         
+        
+        
+    }
+    
+    func submitParty(sender:UIButton) {
+        
+        SwiftSpinner.show("Creating Party")
+        
+        let obj_dict:[String:String] = ["Host Name":self.nameTextField.text!, "Party Name":self.partyTextField.text!, "Keyword":self.keywordTextField.text!, "Theme":self.themeTextField.text!, "Location":self.locationTextField.text!, "Description":self.descriptionTextView.text]
+        for (key, value) in obj_dict {
+            if (value == "") {
+                SwiftSpinner.hide()
+                JSSAlertView().show(
+                    self,
+                    title: "Error",
+                    text: "Must enter \(key)",
+                    buttonText: "OK",
+                    color: UIColor.redColor()
+                )
+                return
+            }
+        }
+        if (self.imageSelector.image == nil) {
+            SwiftSpinner.hide()
+            JSSAlertView().show(
+                self,
+                title: "Error",
+                text: "Must enter image",
+                buttonText: "OK",
+                color: UIColor.redColor()
+            )
+            return
+            
+        }
+        let PartySubmission = PFObject(className:"Party")
+        
+        PartySubmission.setObject(self.nameTextField.text!, forKey: "Host_Name")
+        PartySubmission.setObject(self.partyTextField.text!, forKey: "Party_Name")
+        PartySubmission.setObject(self.keywordTextField.text!, forKey: "Keyword")
+        PartySubmission.setObject(self.themeTextField.text!, forKey: "Theme")
+        PartySubmission.setObject(self.locationTextField.text!, forKey: "Location")
+        PartySubmission.setObject(self.timePicker.date, forKey: "Date")
+        //        let pickedImage:UIImage = self.imageSelector.image!
+        //        let imageData = UIImagePNGRepresentation(pickedImage)
+        //        let imageFile:PFFile = PFFile(data: imageData!)!
+        //        PartySubmission.setObject(imageFile, forKey: "Image")
+        PartySubmission.setObject(self.descriptionTextView.text, forKey: "Description")
+        PartySubmission.setObject(self.guestLimitSlider.value, forKey: "Guest_Limit")
+        PartySubmission.setObject(self.fundingGoalSlider.value, forKey: "Funding_Goal")
+        
+        
+        PartySubmission.saveInBackgroundWithBlock{
+            (success, error) -> Void in
+            
+            if success == true {
+                SwiftSpinner.hide()
+                JSSAlertView().success(
+                    self,
+                    title: "Great Success",
+                    text: "Party Registered",
+                    buttonText: "OK"
+                )
+            }
+            else {
+                SwiftSpinner.hide()
+                JSSAlertView().show(
+                    self,
+                    title: "Error",
+                    text: "Could not save party. Check your connection.",
+                    buttonText: "OK",
+                    color: UIColor.redColor()
+                )
+            }
+            
+        }
         
         
     }

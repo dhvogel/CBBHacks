@@ -24,6 +24,7 @@ PODS:
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
+  - SwiftSpinner (0.8.0)
   - TextFieldEffects (1.1.0)
 
 DEPENDENCIES:
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - ParseCrashReporting
   - ParseFacebookUtilsV4
   - ParseUI
+  - SwiftSpinner
   - TextFieldEffects
 
 SPEC CHECKSUMS:
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
   ParseFacebookUtilsV4: 216e03bd560404eed09a4875c75f0c1cdf758070
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
 
 COCOAPODS: 0.39.0

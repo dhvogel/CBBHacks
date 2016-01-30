@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class PartyProfileViewController: UIViewController {
     //Initialization of things
@@ -23,6 +24,7 @@ class PartyProfileViewController: UIViewController {
     var guestLimitValue = UILabel()
     var fundsRequestedValue = UILabel()
     var rsvpButton = UIButton()
+    var partyDetails:PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class PartyProfileViewController: UIViewController {
         partyTitle = UILabel(frame: CGRectMake(width/3+5,5, (width*2/3)-5, 44))
         partyTitle.backgroundColor = .blackColor()
         partyTitle.textColor = .whiteColor()
-        partyTitle.text = "Party Title"
+        partyTitle.text = partyDetails.valueForKey("Party_Name") as! String!
         partyTitle.textAlignment = .Center
         partyTitle.font = UIFont(name: partyTitle.font.fontName, size: 22)
         self.view.addSubview(partyTitle)
@@ -55,7 +57,7 @@ class PartyProfileViewController: UIViewController {
         partyTheme = UILabel(frame: CGRectMake(width/3+5,40, (width*2/3)-5, 44))
         partyTheme.backgroundColor = .blackColor()
         partyTheme.textColor = .whiteColor()
-        partyTheme.text = "Theme"
+        partyTheme.text = partyDetails.valueForKey("Theme") as! String!
         partyTheme.textAlignment = .Center
         partyTheme.font = UIFont(name: partyTheme.font.fontName, size: 17)
         self.view.addSubview(partyTheme)
@@ -64,7 +66,7 @@ class PartyProfileViewController: UIViewController {
         hostTitle = UILabel(frame: CGRectMake(width/3+5,70, (width*2/3)-5, 35))
         hostTitle.backgroundColor = .blackColor()
         hostTitle.textColor = .whiteColor()
-        hostTitle.text = "Hosted by xyz"
+        hostTitle.text = "Hosted by \(partyDetails.valueForKey("Host_Name") as! String!)"
         hostTitle.textAlignment = .Center
         hostTitle.font = UIFont(name: hostTitle.font.fontName, size: 12)
         self.view.addSubview(hostTitle)
@@ -73,7 +75,7 @@ class PartyProfileViewController: UIViewController {
         location = UILabel(frame: CGRectMake(5,width/3+5, width/2, 35))
         location.backgroundColor = .blackColor()
         location.textColor = .whiteColor()
-        location.text = "Location"
+        location.text = "Location: \(partyDetails.valueForKey("Location") as! String!)"
         location.font = UIFont(name: location.font.fontName, size: 12)
         self.view.addSubview(location)
         
@@ -81,7 +83,7 @@ class PartyProfileViewController: UIViewController {
         timeStart = UILabel(frame: CGRectMake((width/2)+5,width/3+5, (width/2)-10, 35))
         timeStart.backgroundColor = .blackColor()
         timeStart.textColor = .whiteColor()
-        timeStart.text = "Party Start Time and Day"
+        timeStart.text = "Party Start Time and Day (needs work)"
         timeStart.textAlignment = .Right
         timeStart.font = UIFont(name: timeStart.font.fontName, size: 12)
         self.view.addSubview(timeStart)
@@ -91,7 +93,7 @@ class PartyProfileViewController: UIViewController {
         descriptionParty.backgroundColor = .blackColor()
         descriptionParty.layer.borderColor = UIColor.whiteColor().CGColor
         descriptionParty.layer.borderWidth = 2
-        descriptionParty.text = "Party Description will be here."
+        descriptionParty.text = partyDetails.valueForKey("Description") as! String!
         descriptionParty.textColor = .whiteColor()
         descriptionParty.font = UIFont(name: descriptionParty.font!.fontName, size: 12)
         descriptionParty.userInteractionEnabled = false
@@ -101,7 +103,7 @@ class PartyProfileViewController: UIViewController {
         guestLimit = UILabel(frame: CGRectMake(5,(width/3)+5+40+205, (width/2)-10, 35))
         guestLimit.backgroundColor = .blackColor()
         guestLimit.textColor = .whiteColor()
-        guestLimit.text = "Guests:"
+        guestLimit.text = "Guests: (TBD)"
         guestLimit.font = UIFont(name: guestLimit.font.fontName, size: 14)
         self.view.addSubview(guestLimit)
         
@@ -109,7 +111,7 @@ class PartyProfileViewController: UIViewController {
         fundsRequested = UILabel(frame: CGRectMake(5,(width/3)+5+40+205+40, (width/2)-10, 35))
         fundsRequested.backgroundColor = .blackColor()
         fundsRequested.textColor = .whiteColor()
-        fundsRequested.text = "Funds:"
+        fundsRequested.text = "?"
         fundsRequested.font = UIFont(name: fundsRequested.font.fontName, size: 14)
         self.view.addSubview(fundsRequested)
         
@@ -117,7 +119,7 @@ class PartyProfileViewController: UIViewController {
         guestLimitValue = UILabel(frame: CGRectMake((width/2)+5,(width/3)+5+40+205, (width/2)-10, 35))
         guestLimitValue.backgroundColor = .blackColor()
         guestLimitValue.textColor = .whiteColor()
-        guestLimitValue.text = "10/35"
+        guestLimitValue.text = "Guest Limit: (TBD)"
         guestLimitValue.font = UIFont(name: guestLimitValue.font.fontName, size: 14)
         guestLimitValue.textAlignment = .Right
         self.view.addSubview(guestLimitValue)
@@ -126,7 +128,7 @@ class PartyProfileViewController: UIViewController {
         fundsRequestedValue = UILabel(frame: CGRectMake((width/2)+5,(width/3)+5+40+205+40, (width/2)-10, 35))
         fundsRequestedValue.backgroundColor = .blackColor()
         fundsRequestedValue.textColor = .whiteColor()
-        fundsRequestedValue.text = "$100/$350"
+        fundsRequestedValue.text = "Funding Goal: (TBD)"
         fundsRequestedValue.font = UIFont(name: fundsRequestedValue.font.fontName, size: 14)
         fundsRequestedValue.textAlignment = .Right
         self.view.addSubview(fundsRequestedValue)
@@ -139,10 +141,24 @@ class PartyProfileViewController: UIViewController {
         rsvpButton.layer.borderColor = UIColor.blackColor().CGColor
         rsvpButton.layer.borderWidth = 2
         rsvpButton.userInteractionEnabled = true
+        rsvpButton.addTarget(self, action: "rsvpButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(rsvpButton)
         
     }
 
+    func rsvpButtonAction(Sender:UIButton){
+        //
+        // make them pay
+        //
+        
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("verificationViewController") as! VerificationViewController
+        vc.partyDetails = self.partyDetails
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

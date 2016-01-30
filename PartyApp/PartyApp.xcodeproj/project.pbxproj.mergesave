@@ -19,9 +19,6 @@
 		1A3C45161C5C6BB600DB2F98 /* PartyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45151C5C6BB600DB2F98 /* PartyAppTests.swift */; };
 		1A3C45211C5C6BB600DB2F98 /* PartyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */; };
 		1A9431411C5CEC5F00CF30DF /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9431401C5CEC5F00CF30DF /* JSSAlertView.swift */; };
-		1ADADBE91C5D6802008D7F5E /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADADBE81C5D6802008D7F5E /* VerificationViewController.swift */; };
-		DCAFCAC31C5D491B00712FC8 /* PartyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFCAC21C5D491B00712FC8 /* PartyProfileViewController.swift */; };
-		DCAFCAC51C5D495600712FC8 /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFCAC41C5D495600712FC8 /* KMPlaceholderTextView.swift */; };
 		DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */; };
 		F34DD09050826E9E3E265A26 /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AC825B40E3C8BE51C503DA /* Pods_PartyApp.framework */; };
 /* End PBXBuildFile section */
@@ -62,12 +59,9 @@
 		1A3C45201C5C6BB600DB2F98 /* PartyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyAppUITests.swift; sourceTree = "<group>"; };
 		1A3C45221C5C6BB600DB2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9431401C5CEC5F00CF30DF /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
-		1ADADBE81C5D6802008D7F5E /* VerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		5443B16DB09C0CFFFA85BC70 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C4AC825B40E3C8BE51C503DA /* Pods_PartyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10A0FEDCAA24D04BBA02A7B /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
-		DCAFCAC21C5D491B00712FC8 /* PartyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyProfileViewController.swift; sourceTree = "<group>"; };
-		DCAFCAC41C5D495600712FC8 /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 		DCE225E81C5C7E0000341AE6 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,12 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				1A00602B1C5CC012003B82AD /* HostPartyViewController.swift */,
-				DCAFCAC21C5D491B00712FC8 /* PartyProfileViewController.swift */,
 				1A3C45001C5C6BB500DB2F98 /* AppDelegate.swift */,
 				1A3C45021C5C6BB500DB2F98 /* ViewController.swift */,
 				1A3C45041C5C6BB500DB2F98 /* Main.storyboard */,
-				1ADADBE81C5D6802008D7F5E /* VerificationViewController.swift */,
-				DCAFCAC41C5D495600712FC8 /* KMPlaceholderTextView.swift */,
 				1A24C3721C5C85AE00890C15 /* InitViewController.swift */,
 				1A9431401C5CEC5F00CF30DF /* JSSAlertView.swift */,
 				1A25A8D41C5C830200F0617F /* JoinPartyViewController.swift */,
@@ -359,14 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9431411C5CEC5F00CF30DF /* JSSAlertView.swift in Sources */,
-				DCAFCAC31C5D491B00712FC8 /* PartyProfileViewController.swift in Sources */,
 				DCE225E91C5C7E0000341AE6 /* SecondViewController.swift in Sources */,
 				1A3C45031C5C6BB500DB2F98 /* ViewController.swift in Sources */,
-				1ADADBE91C5D6802008D7F5E /* VerificationViewController.swift in Sources */,
 				1A24C3731C5C85AE00890C15 /* InitViewController.swift in Sources */,
 				1A3C45011C5C6BB500DB2F98 /* AppDelegate.swift in Sources */,
 				1A00602C1C5CC012003B82AD /* HostPartyViewController.swift in Sources */,
-				DCAFCAC51C5D495600712FC8 /* KMPlaceholderTextView.swift in Sources */,
 				1A24C3751C5CB0D500890C15 /* Party.swift in Sources */,
 				1A25A8D51C5C830200F0617F /* JoinPartyViewController.swift in Sources */,
 			);

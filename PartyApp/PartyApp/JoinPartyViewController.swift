@@ -8,6 +8,8 @@
 
 import UIKit
 import TextFieldEffects
+import Parse
+import SwiftSpinner
 
 class JoinPartyViewController: UIViewController {
     
@@ -39,7 +41,7 @@ class JoinPartyViewController: UIViewController {
         self.view.addSubview(keywordTF)
         
         // Create the confirm button
-        confirmButton.frame = CGRectMake(-width,64,width,0.2*height)
+        confirmButton.frame = CGRectMake(width,64,width,0.2*height)
         confirmButton.backgroundColor = UIColor.whiteColor()
         confirmButton.setTitle("Confirm", forState: UIControlState.Normal)
         confirmButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -55,7 +57,7 @@ class JoinPartyViewController: UIViewController {
     func handleKeywordChange(sender:UITextField) {
         if sender.text == "" {
             UIView.animateWithDuration(0.5, animations:{
-                self.confirmButton.frame = CGRectMake(-self.width,64,self.width,0.2*self.height)
+                self.confirmButton.frame = CGRectMake(self.width,64,self.width,0.2*self.height)
             })
         }
         else {
@@ -76,13 +78,29 @@ class JoinPartyViewController: UIViewController {
     
     // Should retrieve a party and go to the party view
     func findParty(keyword:String) {
-        //
-        // use location
-        //
-        // Handle keyword entrance, find party
-        //
-        //
-        //    
+        keywordTF.resignFirstResponder()
+        SwiftSpinner.show("Finding Party")
+        let query = PFQuery(className:"Party")
+        query.whereKey("Keyword", equalTo:keyword)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+            if (error != nil) {
+                SwiftSpinner.hide()
+                JSSAlertView().show(
+                    self,
+                    title: "Error",
+                    text: "Cannot retrieve parties. Please check connectivity.",
+                    buttonText: "OK",
+                    color: UIColor.redColor()
+                )
+            }
+            else {
+                SwiftSpinner.hide()
+                let mapViewControllerObejct = self.storyboard?.instantiateViewControllerWithIdentifier("FindPartyProfVC") as? PartyProfileViewController
+                mapViewControllerObejct?.PartyDetails = object![0]
+                self.navigationController?.pushViewController(mapViewControllerObejct!, animated: true)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
