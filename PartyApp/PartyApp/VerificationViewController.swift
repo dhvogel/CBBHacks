@@ -15,6 +15,7 @@ class VerificationViewController: UIViewController {
     var buttonlist:[UIButton] = []
     var verifArray:[Int] = []
     var timer:NSTimer?
+    var lastChangedButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +88,11 @@ class VerificationViewController: UIViewController {
         // initialize the grid based on the first random number ??????
         
         // generate an array of random numbers of fixed length (start low for testing)
-        verifArray = [0,7,23,2,5,4,0,8,17,9342] // use mod 25 if this is randomly generated
-        
+        // verifArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        verifArray = []
+        for i in 0...18 {
+            verifArray.append(Int(rand()))
+        }
         
         
         for i in 0...24 {
@@ -108,7 +112,7 @@ class VerificationViewController: UIViewController {
             self.view.addSubview(b)
         }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(2, target:self, selector:"update", userInfo:nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector:"update", userInfo:nil, repeats: true)
         
         
     }
@@ -120,19 +124,24 @@ class VerificationViewController: UIViewController {
     
     func update() {
         
+        // turn the last changed one to grey
+        if (lastChangedButton != nil) {
+            lastChangedButton.backgroundColor = UIColor.grayColor()
+        }
+        
         // change the current array position
-        var buttonToChange = self.verifArray[Int(NSDate().timeIntervalSince1970) % self.verifArray.count] % 25
+        var buttonToChange = self.verifArray[Int(NSDate().timeIntervalSince1970*13) % self.verifArray.count] % 25
         print(buttonToChange)
         var b:UIButton = self.buttonlist[buttonToChange]
         if b.backgroundColor == UIColor.blackColor() {
             // it was black so change it to gray
-            print("it was black so change to gray")
             b.backgroundColor = UIColor.grayColor()
         }
         else {
             // it was gray so change it to black
-            print("it was gray so change it to black")
             b.backgroundColor = UIColor.blackColor()
+            // save this so it can be turned back to grey later
+            lastChangedButton = b
         }
         self.buttonlist[buttonToChange] = b
     }
