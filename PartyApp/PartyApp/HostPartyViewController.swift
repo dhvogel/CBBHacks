@@ -289,12 +289,14 @@ class HostPartyViewController: UIViewController, UITextFieldDelegate, UIImagePic
             
             if success == true {
                 SwiftSpinner.hide()
+                self.navigationController?.popToRootViewControllerAnimated(true)
                 JSSAlertView().success(
                     self,
                     title: "Great Success",
                     text: "Party Registered",
                     buttonText: "OK"
                 )
+                
             }
             else {
                 SwiftSpinner.hide()
