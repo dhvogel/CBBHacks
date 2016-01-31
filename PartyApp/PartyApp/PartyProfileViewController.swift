@@ -58,7 +58,7 @@ class PartyProfileViewController: UIViewController {
         partyTheme = UILabel(frame: CGRectMake(width/3+5,40, (width*2/3)-5, 44))
         partyTheme.backgroundColor = .blackColor()
         partyTheme.textColor = .whiteColor()
-        partyTheme.text = partyDetails.valueForKey("Theme") as! String!
+        partyTheme.text = "Theme: \(partyDetails.valueForKey("Theme") as! String!)"
         partyTheme.textAlignment = .Center
         partyTheme.font = UIFont(name: partyTheme.font.fontName, size: 17)
         self.view.addSubview(partyTheme)
@@ -84,7 +84,10 @@ class PartyProfileViewController: UIViewController {
         timeStart = UILabel(frame: CGRectMake((width/2)+5,width/3+5, (width/2)-10, 35))
         timeStart.backgroundColor = .blackColor()
         timeStart.textColor = .whiteColor()
-        timeStart.text = "Party Start Time and Day (needs work)"
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "US_en")
+        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+        timeStart.text = "\(partyDetails.valueForKey("Date") as! NSDate!)"
         timeStart.textAlignment = .Right
         timeStart.font = UIFont(name: timeStart.font.fontName, size: 12)
         self.view.addSubview(timeStart)
@@ -104,7 +107,11 @@ class PartyProfileViewController: UIViewController {
         guestLimit = UILabel(frame: CGRectMake(5,(width/3)+5+40+205, (width/2)-10, 35))
         guestLimit.backgroundColor = .blackColor()
         guestLimit.textColor = .whiteColor()
-        guestLimit.text = "Guests: (TBD)"
+        var guestCount = partyDetails.valueForKey("Guests")?.count
+        if (guestCount == nil) {
+            guestCount = 0
+        }
+        guestLimit.text = "Guests: \(guestCount!)"
         guestLimit.font = UIFont(name: guestLimit.font.fontName, size: 14)
         self.view.addSubview(guestLimit)
         
@@ -112,7 +119,7 @@ class PartyProfileViewController: UIViewController {
         fundsRequested = UILabel(frame: CGRectMake(5,(width/3)+5+40+205+40, (width/2)-10, 35))
         fundsRequested.backgroundColor = .blackColor()
         fundsRequested.textColor = .whiteColor()
-        fundsRequested.text = "?"
+        fundsRequested.text = "Requested: $\(partyDetails.valueForKey("Funding_Goal") as! Int!)"
         fundsRequested.font = UIFont(name: fundsRequested.font.fontName, size: 14)
         self.view.addSubview(fundsRequested)
         
@@ -120,7 +127,7 @@ class PartyProfileViewController: UIViewController {
         guestLimitValue = UILabel(frame: CGRectMake((width/2)+5,(width/3)+5+40+205, (width/2)-10, 35))
         guestLimitValue.backgroundColor = .blackColor()
         guestLimitValue.textColor = .whiteColor()
-        guestLimitValue.text = "Guest Limit: (TBD)"
+        guestLimitValue.text = "Guest Limit: \(partyDetails.valueForKey("Guest_Limit") as! Int!)"
         guestLimitValue.font = UIFont(name: guestLimitValue.font.fontName, size: 14)
         guestLimitValue.textAlignment = .Right
         self.view.addSubview(guestLimitValue)
@@ -129,7 +136,7 @@ class PartyProfileViewController: UIViewController {
         fundsRequestedValue = UILabel(frame: CGRectMake((width/2)+5,(width/3)+5+40+205+40, (width/2)-10, 35))
         fundsRequestedValue.backgroundColor = .blackColor()
         fundsRequestedValue.textColor = .whiteColor()
-        fundsRequestedValue.text = "Funding Goal: (TBD)"
+        fundsRequestedValue.text = "Funding Achieved: $\(guestCount! * 5)"
         fundsRequestedValue.font = UIFont(name: fundsRequestedValue.font.fontName, size: 14)
         fundsRequestedValue.textAlignment = .Right
         self.view.addSubview(fundsRequestedValue)

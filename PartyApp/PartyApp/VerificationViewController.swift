@@ -126,7 +126,7 @@ class VerificationViewController: UIViewController {
         
         // turn the last changed one to grey
         if (lastChangedButton != nil) {
-            lastChangedButton.backgroundColor = UIColor.grayColor()
+            //lastChangedButton.backgroundColor = UIColor.grayColor()
         }
         
         // change the current array position
