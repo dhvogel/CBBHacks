@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PartyApp/ParseUI.framework"
   install_framework "Pods-PartyApp/SwiftSpinner.framework"
   install_framework "Pods-PartyApp/TextFieldEffects.framework"
+  install_framework "Pods-PartyApp/UIColor_Hex_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PartyApp/Bolts.framework"
@@ -106,4 +107,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PartyApp/ParseUI.framework"
   install_framework "Pods-PartyApp/SwiftSpinner.framework"
   install_framework "Pods-PartyApp/TextFieldEffects.framework"
+  install_framework "Pods-PartyApp/UIColor_Hex_Swift.framework"
 fi

@@ -10,6 +10,7 @@ pod 'ParseFacebookUtilsV4'
 pod 'TextFieldEffects'
 pod 'JSSAlertView'
 pod 'SwiftSpinner'
+pod 'UIColor_Hex_Swift', '~> 1.8'
 end
 
 post_install do |installer|

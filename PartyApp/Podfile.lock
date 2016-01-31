@@ -26,6 +26,7 @@ PODS:
     - Parse (~> 1.9)
   - SwiftSpinner (0.8.0)
   - TextFieldEffects (1.1.0)
+  - UIColor_Hex_Swift (1.8)
 
 DEPENDENCIES:
   - Bolts
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - ParseUI
   - SwiftSpinner
   - TextFieldEffects
+  - UIColor_Hex_Swift (~> 1.8)
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
@@ -48,5 +50,6 @@ SPEC CHECKSUMS:
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
+  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
 
 COCOAPODS: 0.39.0

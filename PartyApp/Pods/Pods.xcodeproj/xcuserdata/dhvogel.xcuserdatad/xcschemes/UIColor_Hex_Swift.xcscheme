@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7952D821A205E8542DEEB6F0'
-               BlueprintName = 'Bolts'
+               BlueprintIdentifier = 'DEEDE319CA8842EEA2A6DB0F'
+               BlueprintName = 'UIColor_Hex_Swift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Bolts.framework'>
+               BuildableName = 'UIColor_Hex_Swift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

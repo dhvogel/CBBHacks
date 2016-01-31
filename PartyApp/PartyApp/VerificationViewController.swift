@@ -24,12 +24,12 @@ class VerificationViewController: UIViewController {
         let bwidth = (width-2)/5
         let bheight = (height-64)/5
         
-        var partyHashed = partyDetails.valueForKey("ObjectID") as! String!
+        var partyHashed = partyDetails.valueForKey("objectId") as! String!
         while partyHashed.characters.count < 25 {
             partyHashed = partyHashed + String(arc4random_uniform(9999))
         }
         
-        for i in 0..<25 {
+        for i in 0...24 {
             let b:UIButton = UIButton(frame: CGRectMake(CGFloat(i%5)*bwidth+10, CGFloat(i/5)*bwidth + 64+10, bwidth-20, bwidth-20))
             b.backgroundColor = UIColor.blackColor()
             //

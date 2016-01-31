@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import UIColor_Hex_Swift
 
 class PartyProfileViewController: UIViewController {
     //Initialization of things
@@ -133,16 +134,37 @@ class PartyProfileViewController: UIViewController {
         fundsRequestedValue.textAlignment = .Right
         self.view.addSubview(fundsRequestedValue)
         
+        self.rsvpButton = UIButton(frame: CGRectMake(5,height-120, width-10, 44.0))
+        
+        self.rsvpButton.backgroundColor = .whiteColor()
+        self.rsvpButton.setTitleColor(.blackColor(), forState: UIControlState.Normal)
+        self.rsvpButton.layer.borderColor = UIColor.blackColor().CGColor
+        self.rsvpButton.layer.borderWidth = 2
+        self.rsvpButton.userInteractionEnabled = true
+        self.rsvpButton.addTarget(self, action: "rsvpButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.rsvpButton.setTitle("Fetching...", forState: UIControlState.Normal)
+        self.view.addSubview(self.rsvpButton)
+        
+        
         //Create the rsvp button
-        rsvpButton = UIButton(frame: CGRectMake(5,(width/3)+5+40+205+40+40+15, width-10, 44.0))
-        rsvpButton.setTitle("RSVP: $5", forState: UIControlState.Normal)
-        rsvpButton.backgroundColor = .whiteColor()
-        rsvpButton.setTitleColor(.blackColor(), forState: UIControlState.Normal)
-        rsvpButton.layer.borderColor = UIColor.blackColor().CGColor
-        rsvpButton.layer.borderWidth = 2
-        rsvpButton.userInteractionEnabled = true
-        rsvpButton.addTarget(self, action: "rsvpButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(rsvpButton)
+        let query = PFQuery(className:"Party")
+        query.whereKey("Guests", equalTo: UIDevice.currentDevice().identifierForVendor!.UUIDString)
+        query.whereKey("Keyword", equalTo:partyDetails.objectForKey("Keyword")!)
+        query.findObjectsInBackgroundWithBlock { (object, error) -> Void in
+            if (error == nil) {
+                if (object?.count == 0) {
+                    self.rsvpButton.setTitle("RSVP: $5", forState: UIControlState.Normal)
+                }
+                else {
+                    self.rsvpButton.backgroundColor = UIColor(rgba: "#006400") // Solid color
+                    self.rsvpButton.setTitle("Already Paid! Continue to Verifier", forState: UIControlState.Normal)
+                }
+            }
+            else {
+                print(error)
+            }
+            
+        }
         
     }
 
@@ -150,7 +172,20 @@ class PartyProfileViewController: UIViewController {
         //
         // make them pay
         //
-        
+        let query = PFQuery(className:"Party")
+        query.getObjectInBackgroundWithId(self.partyDetails.valueForKey("objectId") as! String!) {
+            (object, error) -> Void in
+            if error != nil {
+                print("ERROR")
+                print(error)
+            } else {
+                if let object = object {
+                    
+                    object.addUniqueObject(UIDevice.currentDevice().identifierForVendor!.UUIDString, forKey: "Guests")
+                }
+                object!.saveInBackground()
+            }
+        }
         
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("verificationViewController") as! VerificationViewController
         vc.partyDetails = self.partyDetails
